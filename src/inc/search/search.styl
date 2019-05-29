@@ -1,0 +1,36 @@
+@import '~@/lib/stylus/mixin.styl'
+
+.top-search
+  display flex
+  justify-content center
+  align-items center
+  height rem(60px)
+  background #ff7a1b
+  .logo
+    width rem(30px)
+    height rem(30px)
+    margin-right rem(20px)
+    // background url('../img/logo.png') no-repeat center/contain
+  .search-box
+    position relative
+    margin-bottom 0
+    label.placeholder
+      position absolute
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      color #999
+      transition all 0.3s
+    input
+      appearance none
+      width rem(270px)
+      padding rem(8px 10px 8px 30px)
+      border-radius rem(5px)
+      outline none
+      border 0
+    &.onfocus
+      label.placeholder
+        left rem(15px)
+        transition all 0.3s
+        span
+          display none

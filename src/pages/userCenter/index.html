@@ -1,0 +1,161 @@
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>个人中心--金果园</title>
+  <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 用户面板 -->
+  <div class="dashboard">
+    <div class="user-info">
+      <a class="avatar" href="#">
+        <img src="http://www.hexatar.com/gallery/thumb/20151017_m562186105f59d.png" alt="avatar">
+      </a>
+      <ul class="info-list">
+        <li>
+          <span class="info-key">会员ID:</span>
+          <span class="info-value">Wx10086</span>
+        </li>
+        <li>
+          <span class="info-key">微信昵称:</span>
+          <span class="info-value">小飞侠</span>
+        </li>
+        <li>
+          <span class="info-key">推荐人:</span>
+          <span class="info-value">无</span>
+        </li>
+        <li>
+          <span class="info-key">等级:</span>
+          <span class="info-value"></span>
+        </li>
+        <li>
+          <span>关注时间:</span>
+          <span>2017-11-12</span>
+          <span>16:20:20</span>
+        </li>
+      </ul>
+    </div>
+    <ul class="user-links">
+      <li>
+        <a href="#">订单</a>
+      </li>
+      <li>
+        <a href="#">余额</a>
+      </li>
+      <li>
+        <a href="#">兑换券</a>
+      </li>
+    </ul>
+  </div>
+  <!-- 用户面板结束 -->
+
+  <!-- 链接入口 -->
+  <div class="entry-group">
+    <ul>
+      <li>
+        <a href="./index.html">
+          <i class="fa fa-flag"></i>返回商城</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-star-o"></i>我的分销</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-bookmark"></i>我的收藏</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-qrcode" aria-hidden="true"></i>我的二维码</a>
+      </li>
+    </ul>
+  </div>
+  <div class="entry-group">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-list"></i>我的订单</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-shopping-cart"></i>我的购物车</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-phone-square"></i>我的手机号</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-map-signs"></i>收货地址</a>
+      </li>
+    </ul>
+  </div>
+  <div class="entry-group">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-unlock"></i>个人主页</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-truck"></i>申请供货</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-hand-paper-o"></i>农场主申请</a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-users"></i>人工客服</a>
+      </li>
+    </ul>
+  </div>
+  <div class="entry-group">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-newspaper-o"></i>农培公告</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#jszd-modal">
+          <i class="fa fa-star-o"></i>技术指导</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-toggle="modal" data-target="#kxgl-modal">
+          <i class="fa fa-bookmark"></i>科学管理</a>
+      </li>
+    </ul>
+  </div>
+  <!-- 链接入口结束-->
+
+  <!-- modal层 -->
+  <!-- 科学管理 -->
+  <div class="modal" data-link="kxgl" id="kxgl-modal">
+    <ul>
+      <li><a href="#">农场信息</a></li>
+      <li><a href="#">分区管理</a></li>
+      <li><a href="#">人员管理</a></li>
+      <li><a href="#">农事日志</a></li>
+      <li><a href="#">喷灌监控</a></li>
+      <li><a href="#">视频监控</a></li>
+    </ul>
+    <button class="close" data-close="#kxgl-modal"><span>X</span></button>
+  </div>
+  <!-- 技术指导 -->
+  <div class="modal" data-link="jszd" id="jszd-modal">
+    <ul>
+      <li><a href="#">培训视频</a></li>
+      <li><a href="#">现场预约</a></li>
+      <li><a href="#">技术问答</a></li>
+    </ul>
+    <button class="close" data-close="#jszd-modal"><span>X</span></button>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>

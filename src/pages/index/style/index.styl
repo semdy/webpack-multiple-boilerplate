@@ -1,0 +1,114 @@
+@import '~@/lib/stylus/base.styl'
+@import '~@/lib/stylus/mixin.styl'
+navicon(url)
+  size = rem(50px)
+  background url(url) no-repeat top center/size
+
+.slider-wrapper
+  position relative
+  overflow hidden
+  .slider-items
+    li
+      float left
+      width 0
+      img
+        width 100%
+        vertical-align top
+  .slider-dots
+    position absolute
+    width 100%
+    bottom 0
+    text-align center
+    li
+      display inline-block
+      margin rem(5px)
+      width rem(10px)
+      height rem(10px)
+      border-radius rem(5px)
+      background #fff
+      transition width 0.2s
+      &.active
+        width rem(20px)
+        transition width 0.2s
+nav
+  margin rem(20px) 0
+  ul
+    display flex
+    justify-content space-around
+    li
+      &:nth-child(1)
+        navicon('../img/product.png')
+      &:nth-child(2)
+        navicon('../img/user-center.png')
+      &:nth-child(3)
+        navicon('../img/machine.png')
+      &:nth-child(4)
+        navicon('../img/group-buy.png')
+      &:nth-child(5)
+        navicon('../img/user-center.png')
+      a
+        display block
+        padding-top rem(60px)
+        font-size rem(14px)
+        text-decoration none
+        color #999
+.recommend
+  border-top 1px solid #ccc
+  .title
+    position relative
+    height rem(50px)
+    line-height rem(50px)
+    padding 0 rem(20px)
+    font-size rem(17px)
+    font-weight 700
+    color #676767
+    .more
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      right rem(20px)
+      width rem(50px)
+      height rem(25px)
+      line-height rem(25px)
+      text-align center
+      font-size rem(14px)
+      font-weight 400
+      background #fff1de
+      border 1px solid #ed9c67
+      border-radius rem(5px)
+      color #ed9c67
+  .spec-wall
+    background #efefef
+    padding rem(10px)
+    overflow hidden
+    a
+      &:nth-child(1)
+        float left
+        width 50%
+      &:nth-child(2)
+      &:nth-child(3)
+        gap = rem(10px)
+        float right
+        width "calc(50% - %s)" % gap
+      img
+        width 100%
+  .recommend-items
+    display flex
+    flex-wrap wrap
+    a
+      border-top 1px solid #ccc
+      border-right 1px solid #ccc
+      padding rem(10px)
+      height rem(80px)
+      width "calc(100% / %s)" % 3
+      text-decoration none
+      color #000
+      &:nth-child(3n)
+        border-right 0
+      .item-name
+        display block
+        margin-bottom rem(10px)
+        font-size rem(13px)
+        font-weight 600
+      .desc
+        font-size rem(12px)

@@ -1,0 +1,29 @@
+*
+  box-sizing border-box
+body
+  margin 0 auto
+  min-width 320px
+  max-width 540px
+ul,ol
+  margin 0
+  padding 0
+  list-style none
+a
+  text-decoration none
+
+.clearfix::after
+  content ''
+  display table
+  clear both
+
+
+@media (max-device-width: 414px)
+  html 
+    font-size (16px*414/375)
+@media (max-device-width: 375px)
+  html 
+    font-size 16px
+@media (max-device-width: 320px)
+  html 
+    font-size (16px*320/375)
+

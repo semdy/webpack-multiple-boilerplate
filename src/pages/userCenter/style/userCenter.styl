@@ -1,0 +1,133 @@
+@import '~@/lib/stylus/base.styl'
+@import '~@/lib/stylus/mixin.styl'
+body
+  position relative
+  min-height 100vh
+  padding rem(10px)
+  background #efeff4
+  &.modal-open
+    overflow hidden
+.dashboard
+  .user-info
+    border-radius rem(15px 15px 0 0)
+    background #ffbf6b
+    padding rem(20px)
+    overflow hidden
+    .avatar
+      float left
+      width rem(50px)
+      height rem(50px)
+      border-radius 50%
+      overflow hidden
+      img
+        width 100%
+    .info-list
+      padding-left rem(70px)
+      color #fff
+      li
+        padding-bottom  rem(10px)
+        &:last-child
+          display flex
+          justify-content space-between
+          font-size rem(14px)
+  .user-links
+    display flex
+    justify-content space-around
+    padding rem(20px) 0
+    border-radius rem(0 0 15px 15px)
+    background #ffdfb6
+    li
+      for n in 1..3
+        &:nth-child({n})
+          background url('../img/userCenter-icon-' + n + '.png') no-repeat top center/contain
+      a
+        display block
+        width rem(50px)
+        padding-top rem(60px)
+        text-align center
+        color #558eb8
+.entry-group
+  margin-top rem(20px)
+  background #fff
+  border-radius rem(16px)
+  ul
+    li
+      a
+        position relative
+        display block
+        margin-left rem(20px)
+        padding rem(15px 20px 15px 0)
+        font-size rem(17px)
+        color #000
+        border-bottom 1px solid #c8c7cc
+        outline 0
+        &:after
+          content '>'
+          position absolute
+          right rem(20px)
+          font-family "宋体"
+          font-weight 600
+          color #bbb
+        ^[-1]:last-child ^[3..-1]
+          border 0
+        i.fa
+          margin-right rem(16px)
+          color #999
+.modal
+  position fixed
+  z-index 99
+  top 0
+  left 100%
+  right 0
+  width 100%
+  bottom 0
+  background #efeff4
+  overflow-x hidden
+  button.close
+    position absolute
+    bottom rem(100px)
+    padding 0
+    left 0
+    right 0
+    margin auto
+    appearance none
+    width rem(40px)
+    height rem(40px)
+    border 1px solid #ff7a1b
+    border-radius 50%
+    font-size rem(24px)
+    background #fff
+    outline 0
+    span
+      font-weight 200
+      color #ff7a1b
+.modal
+  ul
+    display flex
+    flex-wrap wrap
+    background #fff
+    li
+      width "calc(100% / %s)" % 3
+      padding rem(15px)
+      text-align center
+      border-right 1px solid #efeff4
+      border-bottom 1px solid #efeff4
+      &:nth-child(3n)
+        border-right 0
+      a
+        display block
+        padding-top rem(60px)
+        color #000
+#kxgl-modal
+  li
+    for n in 1..6
+      &:nth-child({n})
+        size = rem(30px)
+        background url('../img/kxgl-icon-' + n + '.png') no-repeat center rem(15px)/size
+
+#jszd-modal
+  li
+    for n in 1..3
+      &:nth-child({n})
+        size = rem(30px)
+        background url('../img/jszd-icon-' + n + '.png') no-repeat center rem(15px)/size

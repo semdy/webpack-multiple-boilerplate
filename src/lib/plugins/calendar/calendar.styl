@@ -1,0 +1,52 @@
+#calendar-wrapper
+  width 100%
+  background-color #fff
+  .c-header
+    position relative
+    padding 1rem 0
+    font-size 1.2rem
+    text-align center
+    color #ff9300
+    .current-month
+      display inline-block
+      width 40%
+      text-align center
+    .c-next
+    .c-prew
+      font-family "宋体"
+      font-size 1.5rem
+      font-weight 800
+      padding 0 0.5rem
+  .c-body
+    width 100%
+    text-align center
+    thead
+      color #ff9300
+      td
+        padding 0
+    td
+      line-height 1
+      padding 1rem 0
+      div
+        opacity 0.7
+        transform scale(0.6)
+      &.current-day
+        position relative
+        color #fff
+        &::after
+          content '今'
+          position absolute
+          display block
+          width 30px
+          height 30px
+          line-height 30px
+          left 0
+          right 0
+          top 0
+          bottom 0
+          margin auto
+          border-radius 50%
+          background-color #ff9300
+          color #fff
+          z-index 2
+          
