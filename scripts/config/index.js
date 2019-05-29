@@ -7,7 +7,7 @@ module.exports = {
   libraryDir: 'lib',
   dev: {
     env: require('./dev.env'),
-    port: 8082,
+    port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
