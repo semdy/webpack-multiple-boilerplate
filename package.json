@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "lint": "eslint ./src --ext .js",
     "serve:dist": "http-server ./dist -p 8888 -o"
   },
   "dependencies": {
@@ -82,7 +83,8 @@
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.1.0",
     "webpack-node-externals": "^1.7.2",
-    "babel-runtime": "^6.26.0"
+    "babel-runtime": "^6.26.0",
+    "njk-html-loader": "^1.2.0"
   },
   "engines": {
     "node": ">= 4.0.0",
