@@ -68,10 +68,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         properties: false,
-        warnings: false
+        warnings: false,
+        comparisons: false
       },
       output: {
-        beautify: true,
+        comments: false,
         quote_keys: true
       },
       mangle: {

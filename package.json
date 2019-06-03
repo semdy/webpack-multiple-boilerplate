@@ -28,6 +28,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.26.0",
     "chalk": "^2.4.2",
     "connect-history-api-fallback": "^1.4.0",
     "copy-webpack-plugin": "^4.1.1",
@@ -60,6 +61,7 @@
     "ip": "^1.1.5",
     "less": "^3.7.1",
     "less-loader": "^4.1.0",
+    "njk-html-loader": "^1.2.0",
     "node-sass": "^4.9.2",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -82,9 +84,7 @@
     "webpack-hot-middleware": "^2.22.3",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.1.0",
-    "webpack-node-externals": "^1.7.2",
-    "babel-runtime": "^6.26.0",
-    "njk-html-loader": "^1.2.0"
+    "webpack-node-externals": "^1.7.2"
   },
   "engines": {
     "node": ">= 4.0.0",
