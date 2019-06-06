@@ -16,7 +16,7 @@ function resolve (dir) {
 
 function getEntryDir() {
   let globPath = 'src/pages/**/*.{html,njk,pug,ejs}'
-  // (\/|\\\\) 这种写法是为了兼容 windows和 mac系统目录路径的不同写法
+  // compat for both windows and mac system path
   let pathDir = 'src(\/|\\\\)'
   let files = glob.sync(globPath)
   let dirname
@@ -94,6 +94,12 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/
       },
+      // {
+      //   test: /.js$/,
+      //   enforce: 'post',
+      //   loader: 'es3ify-loader',
+      //   exclude: /node_modules/
+      // },
       {
         test: /\.pug$/,
         loader: ['html-withimg-loader', 'html-loader', 'pug-html-loader'],
