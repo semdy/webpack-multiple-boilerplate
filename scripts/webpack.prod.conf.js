@@ -11,6 +11,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const InlineWebpackPlugin = require('./insert-webpack-plugin')
 
 const env = config.build.env
 
@@ -65,6 +66,9 @@ const webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
+    new InlineWebpackPlugin({
+      paths: ['object-defineproperty-ie8']
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         properties: false,
@@ -75,10 +79,12 @@ const webpackConfig = merge(baseWebpackConfig, {
       output: {
         comments: false,
         quote_keys: true,
-        screw_ie8: false
+        screw_ie8: false,
+        ascii_only: true
       },
       mangle: {
-        screw_ie8: false
+        screw_ie8: false,
+        safari10: true
       },
       mangleProperties: {
         screw_ie8: false
