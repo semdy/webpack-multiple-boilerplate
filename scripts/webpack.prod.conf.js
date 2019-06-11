@@ -9,9 +9,9 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const ManifestPlugin = require('webpack-manifest-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
-const InlineWebpackPlugin = require('./insert-webpack-plugin')
+const InsertWebpackPlugin = require('./insert-webpack-plugin')
 
 const env = config.build.env
 
@@ -26,8 +26,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('scripts/[name].[chunkhash:8].js'),
-    chunkFilename: utils.assetsPath('scripts/[name].[chunkhash:8].js')
+    filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
+    chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js')
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
@@ -37,7 +37,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.ModuleConcatenationPlugin(),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: utils.assetsPath('styles/[name].[contenthash:8].css')
+      filename: utils.assetsPath('css/[name].[contenthash:8].css')
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
@@ -66,9 +66,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       name: 'manifest',
       chunks: ['vendor']
     }),
-    new InlineWebpackPlugin({
-      paths: ['object-defineproperty-ie8']
-    }),
+    new InsertWebpackPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         properties: false,

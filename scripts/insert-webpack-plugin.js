@@ -1,18 +1,26 @@
-function InlineWebpackPlugin(options) {
+const fs = require('fs')
+const path = require('path')
+const UglifyJS = require("uglify-js")
+
+function InsertWebpackPlugin(options) {
   this.options = options
 }
 
-InlineWebpackPlugin.prototype.apply = function(compiler) {
-  const paths = this.options.paths;
+InsertWebpackPlugin.prototype.apply = function(compiler) {
+  const pathInfo = path.join(__dirname, '../node_modules/object-defineproperty-ie8/index.js')
   compiler.plugin('compilation', function(compilation, options) {
-    compilation.plugin('html-webpack-plugin-before-html-processing', function(htmlPluginData, callback) {
-      for (var i = paths.length - 1; i >= 0; i--) {
-        htmlPluginData.assets.js.unshift(paths[i]);
+    compilation.plugin('html-webpack-plugin-after-html-processing', function(htmlPluginData, callback) {
+      try {
+        let inlineData = fs.readFileSync(pathInfo, 'utf8')
+        inlineData = UglifyJS.minify(`(function(){${inlineData}})()`).code || ''
+        htmlPluginData.html = htmlPluginData.html.replace('</head>', `\n<script>${inlineData}</script>\n</head>`)
+        callback(null, htmlPluginData)
+      } catch (e) {
+        callback(null, htmlPluginData)
+        console.error(e.message, e.stack)
       }
-      callback(null, htmlPluginData);
-    });
-  });
+    })
+  })
+}
 
-};
-
-module.exports = InlineWebpackPlugin;
+module.exports = InsertWebpackPlugin
